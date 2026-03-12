@@ -1,12 +1,42 @@
 ---
 name: ft50-part-discussion-contribution
-description: 用于统筹论文 Discussion、Limitations/Future Research 与 Conclusion 的诊断评审与英文润色改写；默认联动改写三个子部分，确保三者使用同一个理论口径、同一个 claims 边界与同一个语气轨迹。基于 AMJ/SMJ/OrgSci 等顶刊 Discussion 写作范式。
+description: 用于统筹论文 Discussion、Limitations/Future Research 与 Conclusion 的诊断评审与英文润色改写；默认联动改写三个子部分，确保三者使用同一个理论口径、同一个 claims 边界、同一个语气轨迹，并为核心理论主张补上必要的文献锚定。基于 AMJ/SMJ/OrgSci 等顶刊 Discussion 写作范式。
 ---
 
 # Part: Discussion, Limitations & Conclusion Orchestrator
 
 ## 目标
 把三个收束部分当作一条连续链整体改写——Discussion 展开、Limitations 收边界、Conclusion 定调——而不是拆成三个彼此独立的小任务。完成诊断后，直接输出符合 FT50 标准的英文改写版本。
+
+## 强制文献锚定与引用协议
+Discussion/Contribution 不是只靠修辞站住脚，而是要把结论放回可识别的 literature conversation 中。因此，凡是涉及理论推进、与既有研究一致/相反、边界条件、future research agenda 的句子，默认都要有文献锚定，除非该句仅是在概括本文结果。
+
+### 硬规则
+1. **每个核心理论贡献点**至少要有 1 处文献锚定；若该段声称在"推进/修正/挑战"某个对话，通常至少要有 2 处引用来界定被推进的 conversation。
+2. **每个 literature conversation 段落**至少要同时包含：
+   - 1 篇经典/奠基文献，用来界定原始理论口径；
+   - 1 篇近 5 年文献，用来证明该对话仍在发展，而不是历史背景介绍。
+3. **每个 limitations/future research 点**若涉及设计缺口、机制缺口或边界条件，必须有文献依据或明确对应到前文已讨论的文献流。
+4. **Conclusion**不要求逐句堆引用，但只要出现"broader literature/theory implication"式主张，至少要保留 1 处锚定该理论口径的引用。
+5. **实践启示**可以不强制逐句引用，但如果启示依赖某类已知机制、治理安排或制度背景，优先用 1 处文献巩固其适用边界。
+
+### 引用质量规则
+- 引用必须服务于论证，不能只是装饰性的 `prior research suggests`。
+- 优先引用论文原文已经使用的核心文献；如需补充，优先补最近 5 年的 FT50/同等级期刊文献。
+- 经典文献用于界定理论源头，近年文献用于说明对话仍在进行；不能只堆经典文献。
+- 不得编造作者、年份、题目、DOI、页码或直接引语。若当前上下文没有足够信息支持精确引用，保留作者-年份级别的安全表述，或明确标注 `[add supporting citation]`。
+- 除非用户明确要求，不输出参考文献列表；默认在正文中保留 author-year citation 即可。
+
+### 推荐的基础文献锚点
+以下文献不是强制逐篇引用，而是用于提醒 Discussion/Contribution 段落应如何界定"理论贡献"与"文献对话"：
+
+| 文献 | 期刊 | 用途 |
+|------|------|------|
+| Whetten (1989) | Academy of Management Review | 定义理论贡献由哪些元素构成 |
+| Locke & Golden-Biddle (1997) | Academy of Management Journal | 界定论文如何在文献对话中创造贡献空间 |
+| Corley & Gioia (2011) | Academy of Management Journal | 校准"理论贡献"与 claim 强度 |
+| Grant & Pollock (2011) | Academy of Management Journal | 强化 findings 到 contribution 的收束写法 |
+| Alvesson & Sandberg (2011) | Academy of Management Review | 提醒 contribution 不能只是 gap-spotting 式弱推进 |
 
 ## skill 的角色
 这个 skill 是"总导演"，不是"路由器"。它必须先统一主命题，再约束三个子部分围绕同一个理论口径、同一个 claims 边界、同一个语气轨迹展开。
@@ -31,14 +61,15 @@ description: 用于统筹论文 Discussion、Limitations/Future Research 与 Con
 1. 是否以 study-level answer 开篇（用 1–2 句直接回答研究问题，而非重复统计结果）。
 2. 是否按假设/研究问题顺序逐一讨论发现，每个发现都有实质性解释（不只是"H1 is supported"）。
 3. 是否展开了与先前文献的对话（conversation-based contribution），而非仅罗列"consistent with [citation]"。
-4. 对意外发现或不支持假设的结果，是否给出了合理的理论解释。
-5. 理论贡献是否清晰且具体（不是空泛的"extends the literature"），是否明确了对哪个理论对话/辩论做了推进。
-6. 实践启示是否具体可操作（不是泛泛的"managers should pay attention to..."），是否与样本边界一致。
+4. 每个核心 contribution claim 是否有足够文献锚定（经典 + 近年文献，而非只引 1 篇背景文献）。
+5. 对意外发现或不支持假设的结果，是否给出了合理的理论解释，并用文献说明该解释为何可辩护。
+6. 理论贡献是否清晰且具体（不是空泛的"extends the literature"），是否明确了对哪个理论对话/辩论做了推进。
+7. 实践启示是否具体可操作（不是泛泛的"managers should pay attention to..."），是否与样本边界一致。
 
 ### Limitations and Future Research 检查
 1. 是否针对 Discussion 中的 strongest claim 做边界限定（而非另起话题）。
 2. 是否区分了"设计层面的局限"（如样本、测量、因果推断）和"理论层面的边界"（如适用情境、机制前提）。
-3. 每个局限是否附带了对应的 future research direction（不是空洞的"future research should explore..."）。
+3. 每个局限是否附带了对应的 future research direction（不是空洞的"future research should explore..."），并与既有文献缺口形成对应。
 4. 是否避免了自我贬低（不能把自己的研究写垮）。
 5. Future research 建议是否具体到可以指导一篇新论文的设计。
 
@@ -46,8 +77,9 @@ description: 用于统筹论文 Discussion、Limitations/Future Research 与 Con
 1. 是否以压缩版 core proposition 开篇（不是重新写摘要）。
 2. 是否回扣 Discussion 开头的 study-level answer（echo 而非另起）。
 3. 是否在更高层面说明了"为什么这个发现对更大的领域重要"。
-4. 是否避免引入任何 Discussion 中未铺垫的新论点或新理论。
-5. 长度是否控制在 1 段（短论文）至 2–3 段（长论文），不超过半页。
+4. 涉及 broader theoretical significance 时，是否保留了必要的文献锚定，而不是空泛升华。
+5. 是否避免引入任何 Discussion 中未铺垫的新论点或新理论。
+6. 长度是否控制在 1 段（短论文）至 2–3 段（长论文），不超过半页。
 
 ### 跨段一致性检查（7 条核心规则）
 
@@ -99,6 +131,8 @@ Conclusion 必须是对 Discussion 开头的 echo，而不是另起一段。
 - Conclusion 引入 Discussion 中未建立的新机制或新理论主张：判"后段越界"。
 - Practical implications 与样本边界直接冲突（如启示面向所有企业，但样本仅含大型上市公司）：判"启示-边界冲突"。
 - Discussion 仅罗列"consistent with [citation]"而无实质性理论对话：判"贡献缺失"。
+- 核心理论贡献或边界主张没有任何文献锚定：判"citation 缺位"。
+- 为了补引用而编造文献、年份或直接引语：判"citation 幻觉"。
 
 ### 诊断输出模板
 ```
@@ -113,6 +147,7 @@ Conclusion 必须是对 Discussion 开头的 echo，而不是另起一段。
 - Study-level answer 开篇：✓/✗
 - 按假设顺序逐一讨论：✓/✗
 - Literature conversation 质量：✓/✗（是否超越"consistent with"层面）
+- 核心 contribution claim 的文献锚定：✓/✗
 - 意外发现/不支持结果的解释：✓/✗/不适用
 - 理论贡献具体性：✓/✗
 - 实践启示可操作性：✓/✗
@@ -122,12 +157,14 @@ Conclusion 必须是对 Discussion 开头的 echo，而不是另起一段。
 - 是否围绕 strongest claim 做边界限定：✓/✗
 - 设计局限 vs 理论边界 区分：✓/✗
 - 每个局限附带具体 future research direction：✓/✗
+- 边界/Future research 是否有文献锚定：✓/✗
 - 是否避免自我贬低：✓/✗
 
 ### Conclusion 评估
 - 压缩版 core proposition 开篇：✓/✗
 - 回扣 study-level answer（echo）：✓/✗
 - 更高层面的 significance 阐述：✓/✗
+- broader significance 的文献锚定：✓/✗
 - 长度控制：✓/✗
 - 无新论点引入：✓/✗
 
@@ -141,6 +178,11 @@ Conclusion 必须是对 Discussion 开头的 echo，而不是另起一段。
 - Practical-Boundary Alignment Rule：✓/✗
 
 ### 红线检查：通过/不通过 + 原因
+
+### Citation Gaps
+- 必须补 citation 的句子/段落：
+- 可沿用原稿 citation 的位置：
+- 缺少可核验来源、需用户补充的文献点：
 
 ### 结构性修改建议（3–8 条，按优先级排序）
 1. ...
@@ -159,6 +201,8 @@ Conclusion 必须是对 Discussion 开头的 echo，而不是另起一段。
 4. Claim 强度必须与研究设计匹配（相关设计不用因果语言）。
 5. 三个部分必须按 Discussion → Limitations → Conclusion 顺序改写，不可颠倒。
 6. 每段保留"topic sentence → evidence/logic → implication"结构。
+7. 凡是理论推进、边界限定、与既有研究对话的句子，优先保留或补足 author-year citation。
+8. 如果当前上下文无法支持精确文献，不得捏造；用 `[add supporting citation]` 暂留缺口，并在 `Citation Gaps` 中显式列出。
 
 ---
 
@@ -189,6 +233,12 @@ Discussion 必须以直接回答研究问题开头，而非重复统计结果。
 - `Our work complements [citation], who found [prior finding]. We build on this by showing that [extension or boundary condition], suggesting that the relationship is more [nuanced / contingent / robust] than previously theorized.`
 - `Rather than viewing [construct A] and [construct B] as [prior framing], our findings suggest a more [nuanced/dynamic] relationship in which [new framing].`
 
+#### Citation Discipline for Discussion
+- 开头的 study-level answer 可以不带 citation，但紧接着的理论解释段通常要补 1–2 个锚点。
+- 若写 `extend`, `challenge`, `reconcile`, `qualify`, `respond to calls`, 必须说明是在扩展/挑战谁，并保留 citation。
+- 若讨论 non-finding 或 unexpected finding，该解释至少要有 1 个可对接的文献依据；没有就明确标记为审慎推测，而非写成既成结论。
+- 若引用原稿已有文献，优先保留其 author-year 形式，不要在润色时无故删除。
+
 #### D. Theoretical Contributions（理论贡献）
 贡献陈述必须具体到"对哪个对话做了什么推进"。
 
@@ -196,6 +246,11 @@ Discussion 必须以直接回答研究问题开头，而非重复统计结果。
 - `Second, we extend [theory] by incorporating [new element]. While [theory] has traditionally focused on [prior focus], our work demonstrates that [extension].`
 - `Third, our study responds to recent calls (e.g., [citation]) for research on [topic] by providing evidence that [specific finding].`
 - `Our theoretical contribution lies in [specific advance]. By showing that [finding], we offer a more refined understanding of [construct/mechanism], one that accounts for [previously overlooked factor].`
+
+#### Contribution Paragraph Citation Rule
+- 每个 contribution point 默认至少保留 2 类 citation：`foundational anchor + current conversation anchor`。
+- 不要写 `This study contributes to the literature` 后面没有对象；必须落到具体 stream，如 `[ABV / upper echelons / corporate governance monitoring literature]`。
+- 如果贡献点完全来自本文结果，但缺少对话对象，先补 literature target，再写贡献句。
 
 #### E. Practical Implications（实践启示）
 启示必须具体可操作且与样本边界一致。
@@ -225,6 +280,11 @@ Discussion 必须以直接回答研究问题开头，而非重复统计结果。
 - `Our theoretical framework assumes [assumption]. While this assumption is reasonable in [context], it may not hold in [alternative context] where [different condition applies]. Exploring [boundary condition] could reveal important contingencies.`
 - `We focused on [specific aspect of the phenomenon]. However, [related aspect] may also play a role. Future research could integrate [related construct] to develop a more complete theoretical account.`
 
+#### Citation Discipline for Limitations/Future Research
+- 设计局限若已被方法部分或既有研究广泛讨论，可用 1 处 citation 提醒读者这不是随意自我否定。
+- theoretical boundary 最好挂回 Discussion 已出现的理论 stream，避免在 limitation 中临时换文献频道。
+- future research agenda 若声称"recent work has overlooked..."，必须有 citation；否则改成更审慎的 `future studies could examine whether...`。
+
 #### D. Future Research 方向收束
 - `Collectively, these limitations offer a rich agenda for future research that can further illuminate [broader question].`
 - `We hope these limitations serve as an invitation for future studies to [specific research agenda].`
@@ -245,6 +305,10 @@ Discussion 必须以直接回答研究问题开头，而非重复统计结果。
 - `Taken together, our findings suggest that [echo of study-level answer in more compressed, elevated form].`
 - `In sum, this study demonstrates that [compressed restatement], offering a foundation for future research on [broader agenda].`
 - `We hope this study advances our collective understanding of [phenomenon] and encourages further inquiry into [specific direction].`
+
+#### Citation Discipline for Conclusion
+- Conclusion 不要变成 mini literature review，但如果最后一段声称对某理论流有 broader significance，保留 1 个最关键 citation 即可。
+- 若 Conclusion 只是总结本文发现和意义，可以不额外加 citation；但不能删除 Discussion 中已经承担理论锚定功能的必要引用后再做空泛升华。
 
 ---
 
@@ -284,21 +348,22 @@ Discussion 和 Conclusion 的语言必须与研究设计的因果推断能力匹
 
 1. **建立 3 个锚点**：写出 core proposition、strongest defensible claim、broader significance 各一句。
 2. **诊断**：基于 Phase 1 检查清单，分别评估 Discussion / Limitations / Conclusion 的质量，再做跨段一致性检查。
-3. **术语表**：统一核心构念、理论名称、claim 强度表达。
-4. **改写 Discussion**（按以下顺序）：
+3. **citation inventory**：先盘点原稿已出现的经典文献、近 5 年文献、以及明显缺失 citation 的关键句。
+4. **术语表**：统一核心构念、理论名称、claim 强度表达。
+5. **改写 Discussion**（按以下顺序）：
    - Study-level answer 开篇（1–2 句直接回答研究问题）
    - 逐假设讨论（实质解释 + 理论对话，非统计复述）
    - 理论贡献（具体到对哪个对话做了什么推进）
    - 实践启示（具体可操作 + 与样本边界一致）
-5. **改写 Limitations**（不另起炉灶）：
+6. **改写 Limitations**（不另起炉灶）：
    - 围绕 Discussion 的 strongest claim 做边界限定
    - 区分设计局限 vs 理论边界
    - 每个局限附带具体 future research direction
-6. **改写 Conclusion**（用与 Discussion 同一理论口径完成压缩收束）：
+7. **改写 Conclusion**（用与 Discussion 同一理论口径完成压缩收束）：
    - 压缩版 core proposition 开篇
    - Broader significance 阐述
    - Echo 收束（回扣 Discussion 开头的 study-level answer）
-7. **跨段一致性终检**：
+8. **跨段一致性终检**：
    - Core proposition 是否贯穿三部分
    - 理论口径是否一致（Same Conversation Rule）
    - Claim 强度是否前后一致（Claim Discipline Rule）
@@ -306,15 +371,20 @@ Discussion 和 Conclusion 的语言必须与研究设计的因果推断能力匹
    - Conclusion 是否是 echo 而非新起点（Last-Paragraph Echo Rule）
    - 语气是否连续下降（Tone Descent Rule）
    - 无新逻辑引入（No New Logic Late Rule）
-8. **Claim 强度校准**：确保 Discussion/Conclusion 中的因果语言不超过 Methods 识别策略所支撑的层级。
+9. **citation 终检**：
+   - 每个 core contribution 是否都有 citation anchor
+   - 每个 boundary/future research 点是否都能追溯到文献或前文 conversation
+   - 是否存在 `[add supporting citation]` 未处理项
+10. **Claim 强度校准**：确保 Discussion/Conclusion 中的因果语言不超过 Methods 识别策略所支撑的层级。
 
 ---
 
 ### 润色输出模板
 
 1. `Polished Version`（英文，Discussion / Limitations and Future Research / Conclusion 三部分分别输出）
-2. `Key Edits`（英文，5–10 条，说明主要改动与升级点）
-3. `Word/Phrase Upgrades`（英文替换对照表）
+2. `Citation Gaps`（如有；列出仍需用户补文献的句子或 claim）
+3. `Key Edits`（英文，5–10 条，说明主要改动与升级点）
+4. `Word/Phrase Upgrades`（英文替换对照表）
 
 ---
 
@@ -332,6 +402,7 @@ Discussion 和 Conclusion 的语言必须与研究设计的因果推断能力匹
 - Study-level answer 开篇：✓/✗
 - 按假设顺序逐一讨论：✓/✗
 - Literature conversation 质量：✓/✗
+- 核心 contribution claim 的文献锚定：✓/✗
 - 意外发现/不支持结果的解释：✓/✗/不适用
 - 理论贡献具体性：✓/✗
 - 实践启示可操作性：✓/✗
@@ -341,12 +412,14 @@ Discussion 和 Conclusion 的语言必须与研究设计的因果推断能力匹
 - 围绕 strongest claim 做边界限定：✓/✗
 - 设计局限 vs 理论边界 区分：✓/✗
 - 每个局限附带具体 future research direction：✓/✗
+- 边界/Future research 是否有文献锚定：✓/✗
 - 避免自我贬低：✓/✗
 
 ### Conclusion 评估
 - 压缩版 core proposition 开篇：✓/✗
 - 回扣 study-level answer（echo）：✓/✗
 - 更高层面的 significance 阐述：✓/✗
+- broader significance 的文献锚定：✓/✗
 - 长度控制：✓/✗
 - 无新论点引入：✓/✗
 
@@ -360,6 +433,11 @@ Discussion 和 Conclusion 的语言必须与研究设计的因果推断能力匹
 - Practical-Boundary Alignment Rule：✓/✗
 
 ### 红线检查：通过/不通过 + 原因
+
+### Citation Gaps
+- 必须补 citation 的句子/段落：
+- 可沿用原稿 citation 的位置：
+- 缺少可核验来源、需用户补充的文献点：
 
 ### 结构性修改建议（3–8 条，按优先级排序）
 1. ...
@@ -379,6 +457,9 @@ Discussion 和 Conclusion 的语言必须与研究设计的因果推断能力匹
 1. Core proposition 贯穿说明：[如何确保三部分口径一致]
 2. Claim 边界处理：[如何处理 claim 强度与边界对齐]
 3. Echo 收束说明：[Conclusion 如何回扣 Discussion 开头]
+
+## Citation Gaps
+- [若无则写 None]
 
 ## Key Edits
 1. ...
