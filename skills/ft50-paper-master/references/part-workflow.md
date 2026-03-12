@@ -42,6 +42,12 @@
 - 输出: Discussion + Limitations/Future Research + Conclusion 的整合修改
 - 失败信号: 三个子部分口径不一致、贡献空泛、局限与结尾失配
 
+## Part 7 Title & Abstract
+- 调用 skill: `ft50-part-abstract`
+- 输入: 摘要草稿（含标题）、目标期刊
+- 输出: 6-Move 结构诊断 + polished 标题与摘要（SMJ 含双摘要）
+- 失败信号: 缺少 Context/Gap/Argument 任一 move、claim 越界、"很少研究"作为核心动机、自包含性不足
+
 ## Part A AI/ML 专项（可插入任意 part）
 - 调用 skill: `ft50-part-ai-ml`
 - 输入: 涉及算法的题目、理论、方法段
